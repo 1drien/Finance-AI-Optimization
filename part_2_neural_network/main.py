@@ -20,3 +20,13 @@ plt.ylabel('Frequency')
 # 4. Save instead of show
 plt.savefig('medv_histogram.png')
 print("Plot successfully saved as 'medv_histogram.png'")
+
+labels = ['Low', 'Mid', 'High']
+df['Class'] = pd.qcut(df['MEDV'], q=3, labels=labels)
+
+# Vérification du résultat
+print(df[['MEDV', 'Class']].head())
+print("\nNumber of house per categories :")
+print(df['Class'].value_counts())
+
+#neural network 
